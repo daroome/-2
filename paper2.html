@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/swiper/dist/css/swiper.min.css">
+    <script type="text/javascript" src="../../resources/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/jquery-ui.1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/common.js"></script>
+    <script type="text/javascript" src="../../resources/swiper/dist/js/swiper.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+</head>
+<body>
+<div class="wrapper paper">
+    <header>
+        <botton class="prev"></botton>
+        <span class="logo"></span>
+    </header>
+    <div class="banner">
+        <ul>
+            <li>1. 진행 시간은 15분 내외 입니다.</li>
+            <li>2. 타인의 평가가 아닌 본인이 생각하는 자신을 기준으로 해주세요</li>
+            <li>3. 좋아하거나 원하는 것이 아닌 편안하고 자연스러운 자신의 평소 상태로 응답해주세요</li>
+            <li>4. 학습된 모습이 아닌 타고난 본성에 초점을 두고 풀어주세요</li>
+        </ul>
+    </div>
+    <div class="pg_bar">
+        <span class="on"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <ul class="paper_list">
+            @@for (var i = 0; i < 20; i++) {
+                <li>
+                    <p class="question">
+                        `+ [
+                        '<span>021</span><br> 나는 다른 사람을 즐겁게 해주는 것을 좋아한다.',
+                        '<span>022</span><br> 나는 마음에 들지 않는 사람에게 직설적으로 얘기하는 경향이 있다.',
+                        '<span>023</span><br> 나는 사람들 사이에서 중재자 역할을 잘한다.',
+                        '<span>024</span><br> 나는 티를 잘 안내지만 까다로운 편이다.',
+                        '<span>025</span><br> 나는 서두르다보니 종종 실수할 때가 있다.',
+                        '<span>026</span><br> 나는 고집이 쎄고 목표가 분명하다.',
+                        '<span>027</span><br> 나는 곤란하거나 성가신 일에 가능한 관여하지 않으려고 한다.',
+                        '<span>028</span><br> 나는 사람들 앞에 나서는 걸 좋아하지 않는다.',
+                        '<span>029</span><br> 나는 사람을 좋아하며 사람을 통해 에너지를 얻는 편이다.',
+                        '<span>030</span><br> 나는 과정보다 결과로 증명하는 것을 선호한다.',
+                        '<span>031</span><br> 나는 감정이 쉽게 격해지거나 동요되지 않는다.',
+                        '<span>032</span><br> 나는 완벽주의가 강한편이다.',
+                        '<span>033</span><br> 나는 활발하며 활동적이다.',
+                        '<span>034</span><br> 나는 화가 나면 쉽게 식지 않고 거칠어지는 편이다.',
+                        '<span>035</span><br> 나는 늘 한결같은 편이다.',
+                        '<span>036</span><br> 나는 조용하며 신중하다.',
+                        '<span>037</span><br> 나는 대체로 긍정적으로 생각하는 편이다.',
+                        '<span>038</span><br> 나는 주도적이며 이끌어 가는 것을 좋아한다.',
+                        '<span>039</span><br> 나는 도전적인 삶보다는 가늘고 긴 삶을 선호한다.',
+                        '<span>040</span><br> 나는 스트레스를 받으면 소화가 안되고 머리가 종종 아프다.'
+                        ][i] +`
+                    </p>
+                    <div class="answer">
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>매우 그렇다</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>대게 그렇다</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>조금 그렇다</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>그렇지않다</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+
+        <div class="btns">
+            <a href="../view/paper1.html">이전</a>
+            <a href="../view/paper3.html">다음</a>
+        </div>
+    </div>
+   
+</div>
+<script>
+    $("input[type='radio']").on("click", function(){
+        var scrollTo = $(this).parents("li").next("li").offset().top;
+        $("html, body").animate({ scrollTop : scrollTo }, 500);
+    })
+</script>
+</body>
+</html>

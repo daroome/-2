@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/swiper/dist/css/swiper.min.css">
+    <script type="text/javascript" src="../../resources/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/jquery-ui.1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/common.js"></script>
+    <script type="text/javascript" src="../../resources/swiper/dist/js/swiper.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+</head>
+<body>
+<div class="wrapper paper">
+    <header>
+        <botton class="prev"></botton>
+        <span class="logo"></span>
+    </header>
+    <div class="banner">
+        <ul>
+            <li>1. 진행 시간은 15분 내외 입니다.</li>
+            <li>2. 타인의 평가가 아닌 본인이 생각하는 자신을 기준으로 해주세요</li>
+            <li>3. 좋아하거나 원하는 것이 아닌 편안하고 자연스러운 자신의 평소 상태로 응답해주세요</li>
+            <li>4. 학습된 모습이 아닌 타고난 본성에 초점을 두고 풀어주세요</li>
+        </ul>
+    </div>
+    <div class="pg_bar">
+        <span class="on"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div>
+        <ul class="paper_list">
+            @@for (var i = 0; i < 20; i++) {
+                <li>
+                    <p class="question">
+                        `+ [
+                        '<span>041</span><br> 나는 말이 많은 편이다.',
+                        '<span>042</span><br> 나는 대체로 동정심이 없는 편이다.',
+                        '<span>043</span><br> 나는 인내심이 강하고 성실하다.',
+                        '<span>044</span><br> 나는 주변 사람들에게 헌신적이다.',
+                        '<span>045</span><br> 나는 즉흥적인 모습을 많이 가지고 있다.',
+                        '<span>046</span><br> 나는 상황이 어려워지면 오히려 힘이 생기고 부딪쳐 보고 싶다.',
+                        '<span>047</span><br> 나는 어느 한쪽으로 치우치기보다 중립을 지키는 편이다.',
+                        '<span>048</span><br> 나는 한 가지 일에 집중을 잘 하는 편이다.',
+                        '<span>049</span><br> 나는 솔직한 편이며 속에 있는 생각들을 말로 많이 표현한다.',
+                        '<span>050</span><br> 나는 인간관계보다는 목표와 일이 우선시 될 때가 많다.',
+                        '<span>051</span><br> 나는 목표의식이나 추진력이 약한 편이다.',
+                        '<span>052</span><br> 나는 화가 나더라도 바로 드러내지 않고 쌓아두는 편이다.',
+                        '<span>053</span><br> 나는 산만하고 주의집중을 못할 때가 많다.',
+                        '<span>054</span><br> 나는 자신에게 엄격한 편이다.',
+                        '<span>055</span><br> 나는 먼저 주장하기보다 대체로 지켜보는 쪽에 속한다.',
+                        '<span>056</span><br> 나는 대인관계를 진지하게 생각하며 상대방의 말이나 행동을 깊이 생각한다.',
+                        '<span>057</span><br> 나는 대체로 급한편이며 행동도 빠른 편이다.',
+                        '<span>058</span><br> 나는 명령을 들으면 싫은 것 이상으로 화가 난다.',
+                        '<span>059</span><br> 나는 귀찮은게 많으며 게으른 편이다.',
+                        '<span>060</span><br> 나는 어떤 일의 최악의 상황까지 생각하는 경향이 있다.'
+                        ][i] +`
+                    </p>
+                    <div class="answer">
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>매우 그렇다</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>대게 그렇다</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>조금 그렇다</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="paper`+i+`"/>
+                                <span>그렇지않다</span>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+
+        <div class="btns">
+            <a href="../view/paper2.html">이전</a>
+            <a href="../view/paper4.html">다음</a>
+        </div>
+    </div>
+   
+</div>
+<script>
+    $("input[type='radio']").on("click", function(){
+        var scrollTo = $(this).parents("li").next("li").offset().top;
+        $("html, body").animate({ scrollTop : scrollTo }, 500);
+    })
+</script>
+</body>
+</html>
